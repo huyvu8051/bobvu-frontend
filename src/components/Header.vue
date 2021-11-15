@@ -3,11 +3,12 @@
     <v-app-bar-nav-icon @click="drawer"></v-app-bar-nav-icon>
     <router-link :to="{ name: 'home' }">
       <v-img
-        class="mx-2"
+        class="mx-2 background-color:white"
         src="https://i.imgur.com/PiabvKC.png"
         max-height="150"
         max-width="150"
         contain
+        
       ></v-img
     ></router-link>
     <v-spacer></v-spacer>

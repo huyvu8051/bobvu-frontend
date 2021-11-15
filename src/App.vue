@@ -5,7 +5,7 @@
     <Particles />
     <v-container fluid fill-height rounded-lg>
       <v-layout align-center justify-center>
-        <v-flex xs12 sm12 md8>
+        <v-flex xs12 sm12 md12 lg10 xl10>
           <router-view class="rounded-lg"></router-view>
         </v-flex>
       </v-layout>

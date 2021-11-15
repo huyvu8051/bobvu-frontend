@@ -4,7 +4,6 @@
       <v-list-item-group>
         <DigitalClock />
 
-        <v-divider></v-divider>
         <v-list-item
           v-for="item in navigators"
           :key="item.to"
