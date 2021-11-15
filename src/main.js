@@ -6,6 +6,9 @@ import router from './router'
 import store from '@/store/store'
 
 import vuetify from './plugins/vuetify'
+import resize from "vue-element-resize-detector";
+
+Vue.use(resize)
 
 Vue.config.productionTip = false
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="particles-js"></div>
+    <div id="particles-js" v-resize @resize="onResize" />
     <!-- stats - count particles -->
     <!-- <div class="count-particles">
       <span class="js-count-particles">--</span> particles
@@ -10,13 +10,56 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+      block: false
+    };
+  },
+  created() {
+    this.$eventBus.$on("updatePs", this.update);
+  },
+  destroyed() {
+    this.$eventBus.$off("updatePs");
+  },
+
   mounted() {
-    setTimeout(() => {
-      this.render();
-    }, 500);
+    this.render();
   },
   methods: {
+    onResize(e) {
+
+      // prevent spam event
+
+      if(this.block === true){
+        console.log("block")
+        return;
+      }
+
+      this.block = true;
+
+      setTimeout(() => {
+        this.block = false;
+      }, 100);
+
+      console.log("resize event", e.detail.width, e.detail.height);
+      this.$eventBus.$emit("updatePs");
+    },
+    update() {
+
+
+
+
+      // window.pJSDom[0].pJS.particles.number.value = 200;
+      // window.pJSDom[0].pJS.particles.color.value = "#dccaff";
+      // window.pJSDom[0].pJS.tmp.obj.size_value = 80;
+
+      // window.pJSDom[0].pJS.fn.particlesUpdate();
+
+      window.pJSDom.forEach((element) => {
+        element.pJS.fn.particlesRefresh();
+      });
+    },
+
     render() {
       particlesJS("particles-js", {
         particles: {
@@ -24,7 +67,7 @@ export default {
             value: 70,
             density: {
               enable: true,
-              value_area: 800,
+              value_area: 1000,
             },
           },
           color: {
@@ -179,7 +222,7 @@ canvas {
   background-color: #464141;
   background-image: url("");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: 50% 50%;
 }
 
