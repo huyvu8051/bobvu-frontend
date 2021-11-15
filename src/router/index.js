@@ -2,9 +2,9 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import Parcheesi from "@/components/Parcheesi";
-import Login from "@/components/Login";
+import Post from "@/components/Post";
 import Signup from "@/components/Signup";
-import ListGame from "@/components/ListGame";
+import Error from "@/components/Error";
 import Account from "@/components/Account";
 import Home from "@/components/Home";
 
@@ -15,18 +15,18 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "Home",
+      name: "home",
       component: Home
     },
     {
-      path: "/signup",
-      name: "signup",
-      component: Signup
+      path: '/post/:url',
+      name: 'post',
+      component: Post
     },
     {
-      path: "/game",
-      name: "game",
-      component: ListGame
+      path: "/error",
+      name: "404",
+      component: Error
     },
     {
       path: "/parcheesi",

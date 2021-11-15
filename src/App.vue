@@ -1,16 +1,12 @@
 <template>
   <v-app>
-    <Navigation />
     <Header />
+    <Navigation />
     <Particles />
     <v-container fluid fill-height rounded-lg>
       <v-layout align-center justify-center>
         <v-flex xs12 sm12 md8>
-          <v-main>
-            <Parallax/>
-            <Breadcrumbs/>
-            <router-view class="rounded-lg"></router-view>
-          </v-main>
+          <router-view class="rounded-lg"></router-view>
         </v-flex>
       </v-layout>
     </v-container>
@@ -38,11 +34,9 @@ export default {
     Footer: Footer,
     Particles: Particles,
     Parallax: Parallax,
-    Breadcrumbs:Breadcrumbs
+    Breadcrumbs: Breadcrumbs,
   },
-  data: () => ({
-    
-  }),
+  data: () => ({}),
 };
 </script>
 

@@ -7,17 +7,17 @@ export default {
   data: () => ({
     items: [
       {
-        text: "Dashboard",
+        text: "Home",
         disabled: false,
         href: "breadcrumbs_dashboard",
       },
       {
-        text: "Link 1",
+        text: "Category 1",
         disabled: false,
         href: "breadcrumbs_link_1",
       },
       {
-        text: "Link 2",
+        text: "Title of post",
         disabled: true,
         href: "breadcrumbs_link_2",
       },
