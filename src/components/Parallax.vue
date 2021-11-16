@@ -2,8 +2,8 @@
   <v-parallax class="rounded-lg" :height="height" :src="coverImg" lazy>
     <v-row align="center" justify="center">
       <v-col class="text-center" cols="12">
-        <h1 class="text-h4 font-weight-thin mb-4">{{ title }}</h1>
-        <h4 class="subheading">{{ createdDate }}</h4>
+        <h1 class="text-h2 font-weight-thin mb-4 shadow">{{ title }}</h1>
+        <h4 class="subheading shadow">{{ createdDate }}</h4>
       </v-col>
     </v-row>
   </v-parallax>
@@ -24,4 +24,7 @@ export default {
 </script>
 
 <style>
+.shadow {
+  text-shadow:  1px 1px 8px #000000;
+}
 </style>
